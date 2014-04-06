@@ -19,7 +19,7 @@ colorImages  = ['redball.gif',    'blueball.gif',    'brownball.gif',
 // --------------------------------------------------------
 // called when user clicks "New Game".
 function newGame(){
-    resetGame();  
+    resetGame();
     gameNumber++;
     runTimer();
 }
@@ -75,6 +75,17 @@ function showHelp(i){
 		curBot=i;
 		
     	var x = document.getElementById("myTextarea" +i).value;
+		x = x.trim();
+		var n = x.indexOf("function");
+		
+		if(n==0){
+		 x = x.replace("function","");
+		 x = x.replace("bot()","");
+		 x = x.trim();
+		 x= x.slice(1,x.length-1);
+		 }
+		 
+		 //alert(x);
 		
 		//eval(x);
 		var tmpFunc = new Function(x);
