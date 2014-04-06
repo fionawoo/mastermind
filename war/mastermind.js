@@ -19,7 +19,7 @@ colorImages  = ['redball.gif',    'blueball.gif',    'brownball.gif',
 // --------------------------------------------------------
 // called when user clicks "New Game".
 function newGame(){
-    resetGame();
+    resetGame();  
     gameNumber++;
     runTimer();
 }
